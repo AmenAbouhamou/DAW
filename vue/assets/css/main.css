@@ -1,0 +1,32 @@
+* {
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+body {
+  background-color: var(--color-0);
+  color: var(--color-8);
+  min-width: 280px;
+}
+
+div, header, main, footer {
+  padding: 0.7rem;
+}
+
+body > header {
+  background-color: var(--color-2);
+}
+
+body > main {
+  background-color: var(--color-1);
+}
+
+body > footer {
+  background-color: var(--color-3);
+}
