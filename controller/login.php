@@ -4,7 +4,7 @@ session_start();
 if (Login()) {
     echo "<script>alert('mot passe ou username error');</script>";
 } else
-    Redirect('../', 200);
+    Redirect('../vue/index?p=home', 200);
 
 function Redirect($url, $status)
 {
