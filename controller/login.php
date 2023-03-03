@@ -1,23 +1,17 @@
 <?php
 require_once '../model/sql-request.php';
 session_start();
-if (Login()) {
+if (get_login()) {
     echo "<script>alert('mot passe ou username error');</script>";
 } else
-    Redirect('../vue/index?p=home', 200);
+    echo "<script>alert('mot passe ou username good');</script>";
 
-function Redirect($url, $status)
-{
-    header('Location: ' . $url, true, $status);
-    exit();
-}
 
-function Login(): bool
+function get_login(): bool
 {
     $userlogin = $_POST['username'];
     $passlogin = hash('sha256', $_POST['password']);
-    //    $userlogin='ciccio';
-    //    $passlogin=hash('sha256', 'tooor');
+
     $userQuery = array();
     $userQuery = array_merge($userQuery, getUserLogin());
     $a = array();
@@ -29,6 +23,5 @@ function Login(): bool
         if ($username == $userlogin && $passlogin == $password)
             return true;
     }
-    //    print_r($userQuery);
     return false;
 }
