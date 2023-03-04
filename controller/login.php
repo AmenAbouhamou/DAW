@@ -1,10 +1,11 @@
 <?php
 require_once '../model/sql-request.php';
 session_start();
+$cookie_name = "logged";
 if (get_login()) {
-    echo "<script>alert('mot passe ou username error');</script>";
+    setcookie($cookie_name, true, time() + (86400 * 30), "/");
 } else
-    echo "<script>alert('mot passe ou username good');</script>";
+    echo "<script>alert('mot passe ou username bad');</script>";
 
 
 function get_login(): bool

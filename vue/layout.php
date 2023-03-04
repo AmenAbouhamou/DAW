@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <title><?= $title ?></title>
     <!-- CSS -->
-    <?php if (get_color_theme()) { ?>
-      <link href="assets/css/light.css" rel="stylesheet" />
-    <?php } else { ?>
-      <link href="assets/css/dark.css" rel="stylesheet" />
-    <?php } ?>
+    <?php if (get_color_theme()) {
+      echo '<link href="assets/css/light.css" rel="stylesheet" />'
+    } else {
+      echo '<link href="assets/css/dark.css" rel="stylesheet" />'
+    } ?>
     <link href="assets/css/main.css" rel="stylesheet" />
     <!-- SVG favicon -->
     <link rel="icon" href="assets/img/favicon.svg" />
