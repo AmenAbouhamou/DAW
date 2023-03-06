@@ -1,5 +1,5 @@
 <?php
-require_once '../model/sql-request.php';
+require_once '../model/sql_request.php';
 session_start();
 $cookie_name = "logged";
 if (get_login()) {

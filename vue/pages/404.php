@@ -7,6 +7,5 @@
 
 <?php
 $content = ob_get_contents();
-require_once '../layout.php';
 ob_get_clean();
 ?>

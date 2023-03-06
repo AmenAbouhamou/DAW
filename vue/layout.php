@@ -1,3 +1,7 @@
+<?php
+require_once '../controller/get_color_theme.php';
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,9 +9,9 @@
     <title><?= $title ?></title>
     <!-- CSS -->
     <?php if (get_color_theme()) {
-      echo '<link href="assets/css/light.css" rel="stylesheet" />'
+      echo '<link href="assets/css/light.css" rel="stylesheet" />';
     } else {
-      echo '<link href="assets/css/dark.css" rel="stylesheet" />'
+      echo '<link href="assets/css/dark.css" rel="stylesheet" />';
     } ?>
     <link href="assets/css/main.css" rel="stylesheet" />
     <!-- SVG favicon -->
@@ -25,4 +29,5 @@
       <?php require_once('pages/includes/footer.php'); ?>
     </footer>
   </body>
+  <?= $script ?>
 </html>
