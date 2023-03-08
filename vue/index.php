@@ -1,7 +1,7 @@
 <?php
 require_once "../controller/is_connected.php";
 $page_dir = '../vue/pages';
-setcookie("theme", "light", time() + 365*24*3600,"/");
+//setcookie("theme", "light", time() + 365*24*3600,"/");
 if(!isset($_GET['p'])){
     // Home : default
     $_GET['p']='home';

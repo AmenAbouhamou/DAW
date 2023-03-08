@@ -1,5 +1,4 @@
 <?php
-require_once 'toggle_color_theme.php';
 // get the color theme that we used
 function get_color_theme():string{
     $theme = 0;
