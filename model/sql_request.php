@@ -18,7 +18,7 @@ function getUserLogin():array{
     return $users;
 }
 
-/*function set_User(){
+function set_User($u,$p,$r){
 //    @var ConnectionDb $conn
     $conn=new ConnectionDb();
     $db=$conn->database;
@@ -34,4 +34,4 @@ function getUserLogin():array{
     }
     $conn->closeConnection();
 
-}*/
+}
