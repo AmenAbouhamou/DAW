@@ -1,9 +1,19 @@
-<html>
-<body>
+<?php
+$title = "Login";
+?>
+
+<?php ob_start(); ?>
 <form method="post" action="../controller/login.php">
-    <input type="text" id="username" name="username"><br>
-    <input type="password" id="password" name="password">
-    <input type="button" value="Send">
+    <label for="username">Username</label><input type="text" id="username" name="username"><br>
+    <label for="password">Password</label><input type="password" id="password" name="password">
+    <input type="submit" value="Send">
 </form>
-</body>
-</html>
+
+<?php
+$content = ob_get_contents();
+ob_get_clean();
+?>
+
+<?php
+$script = ob_get_clean();
+?>

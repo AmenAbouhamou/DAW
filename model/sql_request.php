@@ -17,8 +17,9 @@ function getUserLogin():array{
     $conn->closeConnection();
     return $users;
 }
-function set_User(){
-    /** @var ConnectionDb $conn */
+
+/*function set_User(){
+//    @var ConnectionDb $conn
     $conn=new ConnectionDb();
     $db=$conn->database;
     $query=$db->prepare("select id,username,password from user");
@@ -33,5 +34,4 @@ function set_User(){
     }
     $conn->closeConnection();
 
-}
-
+}*/
