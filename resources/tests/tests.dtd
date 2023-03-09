@@ -1,0 +1,5 @@
+<!ELEMENT test (question*)>
+<!ELEMENT question (text,answer*)>
+<!ELEMENT text #PCDATA>
+<!ELEMENT answer #PCDATA>
+<!ATTLIST answer valid (true|false) #REQUIRED>

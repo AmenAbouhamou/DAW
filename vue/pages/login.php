@@ -1,19 +1,12 @@
+<!--
+  - Si l'utilisateur est déjà connecté : rediriger vers home
+  - sinon, juste affiche le formulaire pour se connecter
+-->
 <?php
-$title = "Login";
-?>
-
-<?php ob_start(); ?>
-<form method="post" action="../controller/login.php">
-    <label for="username">Username</label><input type="text" id="username" name="username"><br>
-    <label for="password">Password</label><input type="password" id="password" name="password">
-    <input type="submit" value="Send">
-</form>
+  if (is_connected()) {header('Location: index.php?p=home');}
+  $title = "Login";
+  ob_start(); ?>
 
 <?php
-$content = ob_get_contents();
-ob_get_clean();
-?>
-
-<?php
-$script = ob_get_clean();
-?>
+  $content = ob_get_contents();
+  ob_get_clean();

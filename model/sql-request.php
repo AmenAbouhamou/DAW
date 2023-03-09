@@ -17,21 +17,3 @@ function getUserLogin():array{
     $conn->closeConnection();
     return $users;
 }
-
-function set_User($u,$p,$r){
-//    @var ConnectionDb $conn
-    $conn=new ConnectionDb();
-    $db=$conn->database;
-    $query=$db->prepare("select id,username,password from user");
-    $query->execute();
-    $users=array();
-    while ($row = $query->fetch()) {
-        $a=array();
-        $a['id']=$row['id'];
-        $a['username']=$row['username'];
-        $a['password']=$row['password'];
-        $users[]=$a;
-    }
-    $conn->closeConnection();
-
-}

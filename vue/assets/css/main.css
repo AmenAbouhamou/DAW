@@ -1,32 +1,72 @@
+/* Debug * /
+* { border: 1px solid purple; } /* */
+
+/******************************************************************************
+ * Root                                                                       *
+ ******************************************************************************/
 * {
   color: inherit;
   margin: 0;
   padding: 0;
 }
-
 html {
   font-family: sans-serif;
   font-size: 12px;
 }
-
 body {
   background-color: var(--color-0);
   color: var(--color-8);
   min-width: 280px;
 }
-
 div, header, main, footer {
   padding: 0.7rem;
 }
 
+/******************************************************************************
+ * Header                                                                     *
+ ******************************************************************************/
 body > header {
   background-color: var(--color-2);
+  display: flex;
+  justify-content: space-between;
+}
+body > header :first-child {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+body > header :last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
 }
 
+/******************************************************************************
+ * Footer                                                                     *
+ ******************************************************************************/
+body > footer {
+  background-color: var(--color-3);
+}
+
+/******************************************************************************
+ * Main                                                                       *
+ ******************************************************************************/
 body > main {
   background-color: var(--color-1);
 }
 
-body > footer {
-  background-color: var(--color-3);
+/******************************************************************************
+ * Pages                                                                      *
+ ******************************************************************************/
+.list-container {
+  /* *** */
+}
+
+.course-card {
+  /* *** */
+}
+
+.forum-card {
+  /* *** */
 }

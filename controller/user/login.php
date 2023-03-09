@@ -1,19 +1,11 @@
 <?php
-require_once '../model/sql_request.php';
+require_once '../model/sql-request.php';
 session_start();
 $cookie_name = "logged";
-if(!isset($_COOKIE[$cookie_name])){
-    setcookie($cookie_name, false, time() + (86400 * 30), "/");
-}
-
 if (get_login()) {
     setcookie($cookie_name, true, time() + (86400 * 30), "/");
-} else {
-    setcookie($cookie_name, false, time() + (86400 * 30), "/");
+} else
     echo "<script>alert('mot passe ou username bad');</script>";
-    $url="../vue/index.php?p=login";
-    header("Location:".$url,true,200);
-}
 
 
 function get_login(): bool

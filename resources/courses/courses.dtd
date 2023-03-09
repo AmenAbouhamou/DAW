@@ -1,0 +1,5 @@
+<!ELEMENT course (prerequisite*,ressource*)>
+<!ELEMENT prerequisite (#PCDATA)>
+<!ELEMENT ressource>
+<!ATTLIST ressource type (video|slide) #REQUIRED>
+<!ATTLIST ressource path #REQUIRED>
