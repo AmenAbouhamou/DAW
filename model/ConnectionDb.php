@@ -1,11 +1,11 @@
 <?php
-
+require_once ".config";
 class ConnectionDb
 {
     public $database=null;
-    private $host='localhost';
-    private $username='toor';
-    private $password='toor';
+    private $host=HOST;
+    private $username='root';
+    private $password='root';
     function __construct(){
         $this->connection();
 
@@ -15,6 +15,7 @@ class ConnectionDb
             try {
                 $this->database=new PDO("mysql:host=$this->host;dbname=project",$this->username,$this->password);
                 $this->database->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+                print("connection opened ");
             }catch (PDOException $e){
                 print("connection failed : ".$e->getMessage());
             }

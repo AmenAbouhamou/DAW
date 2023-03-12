@@ -14,15 +14,16 @@ function get_login(): bool
     $passlogin = hash('sha256', $_POST['password']);
 
     $userQuery = array();
-    $userQuery = array_merge($userQuery, getUserLogin());
+    $userQuery = array_merge($userQuery, get_user_login());
     $a = array();
     for ($i = 0; $i < count($userQuery); $i++) {
         $a = array_merge($a, $userQuery[$i]);
-        $id = $a["id"];
         $username = $a["username"];
         $password = $a["password"];
-        if ($username == $userlogin && $passlogin == $password)
+        if ($username == $userlogin && $passlogin == $password){
+            $_SESSION['username']=$username;
             return true;
+        }
     }
     return false;
 }

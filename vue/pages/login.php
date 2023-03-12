@@ -3,6 +3,7 @@
   - sinon, juste affiche le formulaire pour se connecter
 -->
 <?php
+require_once "../controller/user/is_connected.php";
   if (is_connected()) {header('Location: index.php?p=home');}
   $title = "Login";
   ob_start(); ?>
