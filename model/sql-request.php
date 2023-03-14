@@ -4,7 +4,7 @@ function get_user_login():array{
     /** @var ConnectionDb $conn */
     $conn=new ConnectionDb();
     $db=$conn->database;
-    $query=$db->prepare("select id,username,password from user");
+    $query=$db->prepare("select USERNAME,PASSWORD from USER");
     $query->execute();
     $users=array();
     while ($row = $query->fetch()) {
@@ -16,11 +16,22 @@ function get_user_login():array{
     $conn->closeConnection();
     return $users;
 }
-function get_all_students():array{
+function get_ID_User($username):int{
     $conn=new ConnectionDb();
     $db=$conn->database;
-    $query=$db->prepare("select username 
-            from user where ROLE='student'");
+    $query=$db->prepare("select ID FROM USER where USERNAME='$username'");
+    $query->execute();
+//    while($row = $query->fetch()) {
+//            echo "id: " . $row["ID"]. "<br>";
+//    }
+    $id=$query->fetch()['ID'];
+    $conn->closeConnection();
+    return $id;
+}
+function get_all_roles($role):array{
+    $conn=new ConnectionDb();
+    $db=$conn->database;
+    $query=$db->prepare("select username FROM USER where ROLE='$role'");
     $query->execute();
     $users=array();
     while ($row = $query->fetch()) {

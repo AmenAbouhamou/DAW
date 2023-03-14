@@ -60,3 +60,22 @@ CREATE TABLE FORUM_MESSAGE (
                                FOREIGN KEY (USER_ID) REFERENCES USER(ID),
                                FOREIGN KEY (DISCUSSION_ID) REFERENCES FORUM_DISCUSSION(ID)
 );
+
+create table TEST_USER(
+                          id integer not null primary key auto_increment,
+                          id_test integer not null references TEST(ID),
+                          id_user integer not null references USER(ID),
+                          score decimal(5,2) not null
+);
+
+insert into USER(firstname, lastname,username,password, role, created_at)
+values('charles','charles','charles',sha2('toor',256),'student',sysdate());
+
+insert into USER(firstname, lastname,username,password, role, created_at)
+values('charles','charles','charle',sha2('toor',256),'student',sysdate());
+
+insert into USER(firstname, lastname,username,password, role, created_at)
+values('ciccio','ciccio','ciccio',sha2('toor',256),'3',sysdate());
+
+insert into USER(firstname, lastname,username,password, role, created_at)
+values('charles','charles','CharleT',sha2('toor',256),'teacher',sysdate());
