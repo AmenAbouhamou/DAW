@@ -1,7 +1,7 @@
 CREATE TABLE USER (
                       ID INT NOT NULL AUTO_INCREMENT,
-                      FIRSTNAME VARCHAR(255) NOT NULL,
                       LASTNAME VARCHAR(255) NOT NULL,
+                      FIRSTNAME VARCHAR(255) NOT NULL,
                       EMAIL VARCHAR(255) NULL,
                       NIVEAU INT NULL ,
                       USERNAME VARCHAR(255) NOT NULL,

@@ -1,6 +1,6 @@
 <?php
 // return true if the user is logged in as a teacher
-require_once '../../model/sql-request.php';
+require_once '../model/sql-request.php';
 session_start();
 function is_teacher():bool{
     $userlogin=$_SESSION["username"];
