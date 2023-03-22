@@ -1,10 +1,10 @@
 function changeTheme() {
     var theme;
     if (getCookie('theme') == "light") {
-      $("#theme img").attr("src", "assets/img/moon.png");
+      $("#theme img").attr("src", "assets/img/dark.png");
       theme = "dark";
     } else {
-      $("#theme img").attr("src", "assets/img/sun.png");
+      $("#theme img").attr("src", "assets/img/light.png");
       theme = "light";
     }
     document.cookie = "theme=" + theme + "; path=/";

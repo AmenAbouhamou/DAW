@@ -1,5 +1,5 @@
 <?php
-require_once '../model/sql-request.php';
+require_once '../../model/sql-request.php';
 session_start();
 $cookie_name = "logged";
 if (get_login()) {
@@ -10,9 +10,9 @@ if (get_login()) {
 
 function get_login(): bool
 {
-    $userlogin = $_POST['username'];
-    $passlogin = hash('sha256', $_POST['password']);
-
+    $userlogin = $_POST['l_username'];
+    $passlogin = hash('sha256', $_POST['l_password']);
+//    echo "<br>".$_POST['l_username']."  ".$_POST['l_password']."<br>";
     $userQuery = array();
     $userQuery = array_merge($userQuery, get_user_login());
     $a = array();

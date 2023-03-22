@@ -1,4 +1,5 @@
 <?php
+  $test = get_test($_GET['id']); // xml
   ob_start(); ?>
 
 <!-- 

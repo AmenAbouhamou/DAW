@@ -9,8 +9,8 @@ function get_user_login():array{
     $users=array();
     while ($row = $query->fetch()) {
         $a=array();
-        $a['username']=$row['username'];
-        $a['password']=$row['password'];
+        $a['username']=$row['USERNAME'];
+        $a['password']=$row['PASSWORD'];
         $users[]=$a;
     }
     $conn->closeConnection();
@@ -21,9 +21,6 @@ function get_ID_User($username):int{
     $db=$conn->database;
     $query=$db->prepare("select ID FROM USER where USERNAME='$username'");
     $query->execute();
-//    while($row = $query->fetch()) {
-//            echo "id: " . $row["ID"]. "<br>";
-//    }
     $id=$query->fetch()['ID'];
     $conn->closeConnection();
     return $id;
@@ -39,4 +36,22 @@ function get_all_roles($role):array{
     }
     $conn->closeConnection();
     return $users;
+}
+function insert_user($firstname, $lastname, $username, $password, $role):bool{
+    $conn=new ConnectionDb();
+    $db=$conn->database;
+    $query=$db->prepare("INSERT INTO USER(FIRSTNAME,LASTNAME,USERNAME,PASSWORD,ROLE,CREATED_AT) VALUES ('$firstname','$lastname','$username',sha2('$password',256),'$role',sysdate())");
+    $returnq=$query->execute();
+    $conn->closeConnection();
+    return $returnq;
+}
+
+function add_followed_courses($username,$id_course):bool{
+    $conn=new ConnectionDb();
+    $db=$conn->database;
+    $query=$db->prepare("INSERT INTO FOLLOWED_COURSE(user_id, course_id)
+        VALUES ('$username','$id_course')");
+    $returnq=$query->execute();
+    $conn->closeConnection();
+    return $returnq;
 }

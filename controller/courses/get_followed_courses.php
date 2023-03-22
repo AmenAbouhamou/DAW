@@ -1,3 +1,4 @@
 <?php
-// get_followed_courses(user_id)
-// get the courses followed by the user with the given id
+// get_followed_courses()
+// get the courses followed by the user 
+// return an array of courses

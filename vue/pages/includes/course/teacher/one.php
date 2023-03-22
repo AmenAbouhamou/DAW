@@ -1,4 +1,5 @@
 <?php
+  $course = get_course($_GET['id']); // xml
   ob_start(); ?>
 
 <!-- 

@@ -1,8 +1,9 @@
 <?php
+  $couses = get_followed_courses(); // array of courses
   ob_start(); ?>
 
 <!-- 
-  Liste des cours suivis par l'élève connecté puis les cours non suivis
+  Liste des cours suivis par l'élève connecté
 -->
 
 <?php

@@ -1,6 +1,6 @@
 <div>
-  <img src="assets/img/logo.svg" alt="" width="20" height="20">
-  <span>StudUb</span>
+<!--  --><?php //= '<img src="assets/img/' . get_theme() . '.png" width="15" height="15">' ?>
+  <img src="assets/img/favicon.svg" alt="" height="20">
 </div>
 
 <div>
