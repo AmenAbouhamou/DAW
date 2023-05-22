@@ -1,0 +1,16 @@
+<test>
+    <question>
+        <text>Qu'est ce que Python?</text>
+        <answer valid="true">un langage de prog</answer>
+        <answer valid="false">un jeu</answer>
+        <answer valid="false">une serie televise</answer>
+        <answer valid="false">un serpent</answer>
+    </question>
+    <question>
+        <text>Comment definir un titre dans le html?</text>
+        <answer valid="false">avec une balise "nav"</answer>
+        <answer valid="false">avec un #</answer>
+        <answer valid="true">avec la balise "title"</answer>
+        <answer valid="false">avec "//"</answer>
+    </question>
+</test>

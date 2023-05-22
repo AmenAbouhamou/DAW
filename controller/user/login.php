@@ -1,15 +1,20 @@
 <?php
-require_once '../../model/sql-request.php';
-session_start();
+require_once $_SERVER['DOCUMENT_ROOT'].'/model/sql-request.php';
+if(!isset($_SESSION))
+{
+    session_start();
+}
+ob_start();
 $cookie_name = "logged";
 if (get_login()) {
-    setcookie($cookie_name, true, time() + (86400 * 30), "/");
+    setcookie($cookie_name, true, time() + (86400 * 30*60), "/");
 } else
     echo "<script>alert('mot passe ou username bad');</script>";
-
-
+header("Location: http://localhost/vue/index.php?p=login");
+ob_end_flush();
 function get_login(): bool
 {
+    $found=false;
     $userlogin = $_POST['l_username'];
     $passlogin = hash('sha256', $_POST['l_password']);
 //    echo "<br>".$_POST['l_username']."  ".$_POST['l_password']."<br>";
@@ -22,8 +27,8 @@ function get_login(): bool
         $password = $a["password"];
         if ($username == $userlogin && $passlogin == $password){
             $_SESSION['username']=$username;
-            return true;
+            $found=true;
         }
     }
-    return false;
+    return $found;
 }

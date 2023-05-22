@@ -1,3 +1,5 @@
-.idea
+.*
+_*
+course*.xml
 Dockerfile
 docker-compose.yml

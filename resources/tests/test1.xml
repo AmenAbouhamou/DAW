@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<test1><question><text>Qu'est ce que Python?</text><answer valid="false">un langage de prog</answer><answer valid="true">un jeu</answer><answer valid="false">une serie televise</answer><answer valid="false">un serpent</answer></question><question><text>Question</text><answer valid="true">r&#xE9;ponse</answer><answer valid="true">r&#xE9;ponse</answer><answer valid="false">r&#xE9;ponse</answer><answer valid="true">r&#xE9;ponse</answer></question></test1>
